@@ -29,7 +29,8 @@
             ],
             "scripts": [
               "./node_modules/chart.js/dist/Chart.min.js",
-              "./node_modules/chart.js/dist/Chart.js"
+              "./node_modules/chart.js/dist/Chart.js",
+              "./node_modules/ng2-charts/charts/charts.js"
             ]
           },
           "configurations": {
