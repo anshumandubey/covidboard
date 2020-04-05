@@ -29,7 +29,7 @@
   </div>
 
   <div fxFlex="50" class="sec2" fxFlex.xs="50">
-    <img id="earthIcon" *ngIf="clientCountryCode.length>1" src="../assets/earth.png">
+    <img id="earthIcon" *ngIf="clientCountryCode.length>1" src="assets/earth.png">
   <span id="totalLabel">Total Confirmed Cases</span>
   <div id="confirmedCount"[countUp]="totalCount.confirmed" *ngIf="totalCount">0</div>
   <div id="recDeCount">
