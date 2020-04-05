@@ -20,11 +20,11 @@
   <div fxFlex="50" class="sec1" fxFlex.xs="35">
     <img id="countryFlagIcon" src="https://www.countryflags.io/{{clientCountryCode}}/flat/64.png">
   <span id="totalLabelCountry">Total Confirmed Cases in {{clientCountry}}</span>
-  <div id="confirmedCountCountry"[countUp]="tempCountry.confirmed" *ngIf="totalCount">0</div>
+  <div id="confirmedCountCountry"[countUp]="tempCountry.confirmed" *ngIf="tempCountry">0</div>
   <div id="recDeCountCountry">
-    <span id="activeLabel" *ngIf="totalCount"> Active: <span [countUp]="tempCountry.confirmed-tempCountry.recovered">0</span></span>&nbsp;&nbsp;&nbsp;&nbsp;
-    <span id="recLabel" *ngIf="totalCount"> Recovered: <span [countUp]="tempCountry.recovered">0</span></span>&nbsp;&nbsp;&nbsp;&nbsp;
-    <span id="deathLabel" *ngIf="totalCount"> Deaths: <span [countUp]="tempCountry.deaths">0</span></span>
+    <span id="activeLabel" *ngIf="tempCountry"> Active: <span [countUp]="tempCountry.confirmed-tempCountry.recovered">0</span></span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="recLabel" *ngIf="tempCountry"> Recovered: <span [countUp]="tempCountry.recovered">0</span></span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="deathLabel" *ngIf="tempCountry"> Deaths: <span [countUp]="tempCountry.deaths">0</span></span>
   </div>
   </div>
 

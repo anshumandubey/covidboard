@@ -64,11 +64,11 @@ export class AppComponent implements OnInit{
     this.dataService.getLastdayData()
       .subscribe((dataset: CountryData[]) => {
         this.lastdayData = dataset;
-        console.log(this.lastdayData.map(function (el) { return el.country[0].toUpperCase()+el.country.slice(1); }));
+        //console.log(this.lastdayData.map(function (el) { return el.country[0].toUpperCase()+el.country.slice(1); }));
         this.lastdayData.sort((a, b) => b.confirmed - a.confirmed);
         this.lastdayData = this.lastdayData.slice(0,10);
-        console.log(this.lastdayData);
-        console.log(this.testChartData);
+        //console.log(this.lastdayData);
+        //console.log(this.testChartData);
         var namearray = this.lastdayData.map(function (el) { return el.confirmed; });
         this.chartTemp.push({data:namearray,label:'Confirmed'});
         namearray = this.lastdayData.map(function (el) { return el.recovered; });
@@ -76,7 +76,7 @@ export class AppComponent implements OnInit{
         namearray = this.lastdayData.map(function (el) { return el.deaths; });
         this.chartTemp.push({data:namearray,label:'Deaths'});
         this.testChartLabels = this.lastdayData.map(function (el) { return el.country[0].toUpperCase()+el.country.slice(1); });
-        console.log(this.chartTemp);
+        //console.log(this.chartTemp);
       });
       this.countryChanged();
   }
@@ -90,13 +90,13 @@ export class AppComponent implements OnInit{
 
   countryChanged(){
     this.clientCountryCode = this.codes[this.countries.indexOf(this.clientCountry)];
-    console.log(this.clientCountry);
+    //console.log(this.clientCountry);
     this.dataService.getTotalCountry(this.clientCountry)
      .subscribe((countryData: CountryData) =>{
        this.tempCountry = countryData[0];
      },(error:any)=>console.log(<any>error),() => {
       if (this.testChartLabels.length<11 && this.chartTemp.length>2) {
-        console.log(this.testChartLabels.length);
+        //console.log(this.testChartLabels.length);
         this.chartTemp[0].data.push(this.tempCountry.confirmed);
         this.chartTemp[1].data.push(this.tempCountry.recovered);
         this.chartTemp[2].data.push(this.tempCountry.deaths);
@@ -104,7 +104,7 @@ export class AppComponent implements OnInit{
         this.chart.chart.update();
       }
       else if(this.testChartLabels.length>10 && this.chartTemp.length>2){
-      console.log(this.testChartLabels.length);
+      //console.log(this.testChartLabels.length);
       this.chartTemp[0].data[10] = this.tempCountry.confirmed;
       this.chartTemp[1].data[10] = this.tempCountry.recovered;
       this.chartTemp[2].data[10] = this.tempCountry.deaths;
