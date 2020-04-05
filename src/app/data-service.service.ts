@@ -7,9 +7,9 @@ import { CountryData } from './country'
 })
 export class DataServiceService {
 
-  lastdayUrl = 'http://ec2-54-174-192-47.compute-1.amazonaws.com/api/lastday';
+  lastdayUrl = 'https://coviddataapi.herokuapp.com/api/lastday';
 
-  totalData = 'http://ec2-54-174-192-47.compute-1.amazonaws.com/api/total';
+  totalData = 'https://coviddataapi.herokuapp.com/api/total';
   
 
   constructor(private http: HttpClient) { }
