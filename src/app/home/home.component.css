@@ -24,7 +24,7 @@ h3 {
     padding: 2vw;
     color: whitesmoke;
     font-size: 3vmin;
-    font-family: Montserrat;
+    font-family: "Montserrat-Regular";
     margin-top: 2vw;
 }
 
@@ -33,13 +33,13 @@ h4 {
     padding: 2vw;
     color: whitesmoke;
     font-size: 1vmax;
-    font-family: Montserrat;
+    font-family: "Montserrat-Regular";
 }
 
 #rate {
     text-align: center;
     display: block;
-    font-family: Montserrat;
+    font-family: "Montserrat-Regular";
     font-size: 3vmax;
 }
 
