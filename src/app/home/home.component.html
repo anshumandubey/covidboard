@@ -1,0 +1,73 @@
+<div id="loader" fxLayout="row" fxLayoutAlign="center center" *ngIf="1>allChartTemp.length">
+    <img id="loaderGif" src="assets/ripple.gif">
+</div>
+<div id="mainContainer" *ngIf="allChartTemp.length>1">
+    <br>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
+
+        <div fxFlex="50" class="sec1" fxLayout="row" fxLayoutAlign="space-between">
+            <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between">
+                <div fxFlex="100">
+                    <h3>Rate in {{clientCountry}}</h3>
+                </div>
+                <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between">
+                    <div fxFlex="50" class="sec1" fxFlex.xs="50">
+                        <h4>Recovery %</h4>
+                        <span id="rate" class="rec">{{chartTemp[1].data[chartTemp[1].data.length-1]/chartTemp[0].data[chartTemp[0].data.length-1]*100 | number:'1.0-2'}}%</span>
+                    </div>
+
+                    <div fxFlex="50" class="sec2" fxFlex.xs="50">
+                        <h4>Death %</h4>
+                        <span id="rate" class="death">{{chartTemp[2].data[chartTemp[2].data.length-1]/chartTemp[0].data[chartTemp[0].data.length-1]*100 | number:'1.0-2'}}%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div fxFlex="50" class="sec2" fxLayout="row" fxLayoutAlign="space-between">
+            <div fxFlex="100" fxLayout="column" fxLayoutAlign="space-between">
+                <div fxFlex="100">
+                    <h3>Rate overall</h3>
+                </div>
+                <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between">
+                    <div fxFlex="50" class="sec1" fxFlex.xs="50">
+                        <h4>Recovery %</h4>
+                        <span id="rate" class="rec">{{allChartTemp[1].data[allChartTemp[1].data.length-1]/allChartTemp[0].data[allChartTemp[0].data.length-1]*100 | number:'1.0-2'}}%</span>
+                    </div>
+
+                    <div fxFlex="50" class="sec2" fxFlex.xs="50">
+                        <h4>Death %</h4>
+                        <span id="rate" class="death">{{allChartTemp[2].data[allChartTemp[2].data.length-1]/allChartTemp[0].data[allChartTemp[0].data.length-1]*100 | number:'1.0-2'}}%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
+
+        <div fxFlex="50" class="sec1" fxFlex.xs="50">
+            <h3>Growth in {{clientCountry}}</h3>
+            <div id="chartContainer" *ngIf="chartTemp.length>1">
+                <canvas baseChart [chartType]="'line'" [datasets]="chartTemp" [labels]="testChartLabels"
+                    [options]="chartOptions" [legend]="true">
+                </canvas>
+            </div>
+        </div>
+
+        <div fxFlex="50" class="sec2" fxFlex.xs="50">
+            <h3>Growth overall</h3>
+            <div id="chartContainer" *ngIf="allChartTemp.length>1">
+                <canvas baseChart [chartType]="'line'" [datasets]="allChartTemp" [labels]="testChartLabels"
+                    [options]="chartOptions" [legend]="true">
+                </canvas>
+            </div>
+        </div>
+
+    </div>
+
+</div>

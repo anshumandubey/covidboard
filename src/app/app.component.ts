@@ -17,9 +17,9 @@ export class AppComponent implements OnInit{
 
   codes = countryCodes;
 
-  clientCountry :string;
+  clientCountry :string = "";
 
-  clientCountryCode: string;
+  clientCountryCode: string = "";
 
   chartTemp :ChartData[]=[];
   @Input() public testChartData :ChartData= {data:[],label:''};
@@ -77,8 +77,9 @@ export class AppComponent implements OnInit{
         this.chartTemp.push({data:namearray,label:'Deaths'});
         this.testChartLabels = this.lastdayData.map(function (el) { return el.country[0].toUpperCase()+el.country.slice(1); });
         //console.log(this.chartTemp);
+      },(error:any)=>console.log(<any>error),() => {
+        this.countryChanged();
       });
-      this.countryChanged();
   }
 
   getTotal() {
@@ -90,6 +91,8 @@ export class AppComponent implements OnInit{
 
   countryChanged(){
     this.clientCountryCode = this.codes[this.countries.indexOf(this.clientCountry)];
+    localStorage.setItem('clientCountry', this.clientCountry);
+    this.dataService.country.next(this.clientCountry);
     //console.log(this.clientCountry);
     this.dataService.getTotalCountry(this.clientCountry)
      .subscribe((countryData: CountryData) =>{
@@ -116,7 +119,15 @@ export class AppComponent implements OnInit{
 
 
   ngOnInit() {
-    this.clientCountry = this.countries[71];
+    if (localStorage.getItem('clientCountry')) {
+      this.clientCountry = localStorage.getItem('clientCountry');
+      this.dataService.country.next(this.clientCountry);
+    }else{
+      this.clientCountry = this.countries[71];
+      this.dataService.country.next(this.clientCountry);
+    }
+    this.clientCountryCode = this.codes[this.countries.indexOf(this.clientCountry)];
+    // console.log(localStorage.getItem('clientCountry'));
     this.getLastDay();
     this.getTotal();
   }

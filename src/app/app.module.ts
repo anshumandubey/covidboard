@@ -13,10 +13,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { HomeComponent } from './home/home.component';
+import { ApiComponent } from './api/api.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ApiComponent
   ],
   imports: [
     BrowserModule,

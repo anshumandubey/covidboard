@@ -1,0 +1,52 @@
+#chartContainer {
+    width: 90%;
+    height: 50vh;
+    margin: 5%;
+}
+
+#mainContainer {
+    width: 100%;
+    background-color: #262626;
+}
+
+#loader {
+    width: 100%;
+    background-color: #262626;
+    height: 50vh;
+}
+
+#loaderGif {
+    width: 64px;
+}
+
+h3 {
+    text-align: center;
+    padding: 2vw;
+    color: whitesmoke;
+    font-size: 3vmin;
+    font-family: Montserrat;
+    margin-top: 2vw;
+}
+
+h4 {
+    text-align: center;
+    padding: 2vw;
+    color: whitesmoke;
+    font-size: 1vmax;
+    font-family: Montserrat;
+}
+
+#rate {
+    text-align: center;
+    display: block;
+    font-family: Montserrat;
+    font-size: 3vmax;
+}
+
+.rec{
+    color: #5ea83d;
+}
+
+.death{
+    color: #ac3a3a;
+}

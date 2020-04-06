@@ -6,19 +6,22 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<div id="countrySelecter">
+<div id="loader" fxLayout="row" fxLayoutAlign="center center" *ngIf="1>chartTemp.length">
+  <img id="loaderGif" src="assets/ripple.gif">
+</div>
+<div id="countrySelecter" *ngIf="chartTemp.length>1">
 <mat-form-field>
   <mat-select [(value)]="clientCountry" (selectionChange)="countryChanged()">
-    <mat-option *ngFor="let item of countries;let i = index" [value]="item">{{item}}&nbsp;<img id="countryFlag" src="https://www.countryflags.io/{{codes[i]}}/flat/32.png"></mat-option>
+    <mat-option *ngFor="let item of countries;let i = index" [value]="item">{{item}}&nbsp;<img id="countryFlagIcons" src="assets/flagIcons/{{codes[i]}}.png"></mat-option>
   </mat-select>
-  <img id="countryFlag" src="https://www.countryflags.io/{{clientCountryCode}}/flat/32.png">
+  <img id="countryFlagIcons" src="assets/flagIcons/{{clientCountryCode}}.png">
 </mat-form-field>
 </div>
 
-<div id="header" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
+<div id="header" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" *ngIf="chartTemp.length>1">
   <div fxFlex="0" class="secNone" fxFlex.xs="15"></div>
   <div fxFlex="50" class="sec1" fxFlex.xs="35">
-    <img id="countryFlagIcon" src="https://www.countryflags.io/{{clientCountryCode}}/flat/64.png">
+    <img id="countryFlagIcon" src="assets/flagIcons/{{clientCountryCode}}.png">
   <span id="totalLabelCountry">Total Confirmed Cases in {{clientCountry}}</span>
   <div id="confirmedCountCountry"[countUp]="tempCountry.confirmed" *ngIf="tempCountry">0</div>
   <div id="recDeCountCountry">
