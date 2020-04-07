@@ -60,4 +60,18 @@
   </canvas>
 </div> 
 
+<div id="navBar" *ngIf="chartTemp.length>1" fxLayout="row" fxLayoutAlign="center center">
+    <div id="menuItems">
+      <a class="menuLink" routerLink="/home" routerLinkActive="active">Home</a>
+      <a class="menuLink" routerLink="/api" routerLinkActive="active">API</a>
+  </div>
+</div>
+
 <router-outlet></router-outlet>
+
+<div id="footer" *ngIf="chartTemp.length>1" fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="100">
+    <span id="footerText">#Stay_Indoors &nbsp;&nbsp; #Wash_your_hands_with_soap  &nbsp;&nbsp; #Be_Safe </span>
+    <div id="creds"><span id="credText">Made using Angular 9 by <a href="https://github.com/anshumandubey">@anshumandubey</a></span></div>
+    </div>
+</div>
