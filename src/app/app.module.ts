@@ -9,10 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import {ClipboardModule} from '@angular/cdk/clipboard'; 
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomeComponent } from './home/home.component';
 import { ApiComponent } from './api/api.component';
 
@@ -32,11 +36,13 @@ import { ApiComponent } from './api/api.component';
     HttpClientModule,
     ChartsModule,
     CountUpModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ClipboardModule,
+    MatSnackBarModule
   ],
   exports: [MatToolbarModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

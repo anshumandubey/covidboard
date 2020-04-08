@@ -1,0 +1,70 @@
+#mainContainer {
+    width: 100%;
+    background-color: #262626;
+}
+
+#links {
+    margin: 24px;
+    color: whitesmoke;
+    display: flex;
+    background-color: #424242;
+}
+
+#type {
+    padding: 3vmin 3vmin;
+    background-color: #424242;
+    display: inline-block;
+    font-size: 0.9em;
+    width: 10%;
+    text-align: center;
+    margin: auto;
+}
+
+#link {
+    padding: 3vmin;
+    background-color: #ac3a3a;
+    width: 90%;
+    font-size: 0.9em;
+    color: whitesmoke;
+    border-width: 0;
+}
+
+#copyButton {
+    background: #424242;
+    border-width: 0;
+    width: 77px;
+    display: block;
+}
+
+#copyIcon {
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    margin: auto;
+}
+
+#response {
+    height: 57vh;
+    overflow-y: scroll;
+    margin: 24px;
+    color: #d1d1d1;
+}
+
+#responseHeader {
+    display: flex;
+    padding: 24px;
+    background-color: #424242;
+    margin: 24px;
+    font-family: "Montserrat-Regular";
+    color: whitesmoke;
+}
+
+@media screen and (min-width: 600px) {
+    #type {
+        font-size: 2vmin;
+    }
+    #link {
+        font-size: 2vmin;
+    }
+}
